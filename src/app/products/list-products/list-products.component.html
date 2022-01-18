@@ -1,0 +1,144 @@
+<form [formGroup]="productForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+        <mat-card-header>
+            <mat-card-actions class="mr-2">
+                <mat-card-title>
+                    <a routerLink="../view">Products</a>
+                </mat-card-title>
+            </mat-card-actions>
+        </mat-card-header>
+        <mat-card-content>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Product's Name" formControlName="name" required>
+                        <mat-error *ngIf="productForm.controls['name'].hasError('required')">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- end -->
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <textarea matInput placeholder="Description" formControlName="description" required></textarea>
+                        <mat-error *ngIf="productForm.controls['description'].hasError('required')">
+                            Description is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <textarea matInput placeholder="richDescription" formControlName="richDescription"
+                            required></textarea>
+                        <mat-error *ngIf="productForm.controls['richDescription'].hasError('required')">
+                            richDescription is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="image Url" formControlName="image" required />
+                        <mat-error *ngIf="productForm.controls['image'].hasError('required')">
+                            Image is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Brand" formControlName="brand" required />
+                        <mat-error *ngIf="productForm.controls['brand'].hasError('required')">
+                            Brand is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Price" formControlName="price" required>
+                        <mat-error *ngIf="productForm.controls['price'].hasError('required')">
+                            Price is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-select placeholder="Category" formControlName="category" required>
+                            <mat-option *ngFor="let category of categories" [value]="category._id">
+                                {{ category.name }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="productForm.controls['category'].hasError('required')">
+                            Category is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="countInStock" formControlName="countInStock" required />
+                        <mat-error *ngIf="productForm.controls['countInStock'].hasError('required')">
+                            countInStock is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Featured" formControlName="isFeatured" />
+                        <mat-error *ngIf="productForm.controls['isFeatured'].hasError('required')">
+                            Featured is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Newarrival" formControlName="isNewarrival" />
+                        <mat-error *ngIf="productForm.controls['isNewarrival'].hasError('required')">
+                            Newarrival is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Bestseller" formControlName="isBestseller" />
+                        <mat-error *ngIf="productForm.controls['isBestseller'].hasError('required')">
+                            Bestseller is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Mostpopular" formControlName="isMostpopular" />
+                        <mat-error *ngIf="productForm.controls['isMostpopular'].hasError('required')">
+                            Mostpopular is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Save Product </button>
+            <!-- <button mat-raised-button color="primary" type="submit">Edit Product</button> -->
+            <!-- <button mat-raised-button color="primary" type="submit">Delete Product</button> -->
+        </mat-card-actions>
+    </mat-card>
+</form>
