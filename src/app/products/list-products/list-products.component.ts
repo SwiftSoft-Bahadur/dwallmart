@@ -24,7 +24,6 @@ export class ListProductsComponent implements OnInit {
     isMostpopular: [null],
   });
 
-  hasUnitNumber = false;
 
   categories: any = [];
 
