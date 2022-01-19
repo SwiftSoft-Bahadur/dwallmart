@@ -33,7 +33,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { UpdateProductsComponent } from './products/update-products/update-products.component';
 import { ProductaComponent } from './products/producta/producta.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +67,8 @@ import { ProductaComponent } from './products/producta/producta.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     AuthService,
