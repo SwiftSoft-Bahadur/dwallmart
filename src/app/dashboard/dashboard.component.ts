@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this._product.totOrders().subscribe(res => this.totOrders = res)
-    this._product.totProducts().subscribe(res => this.totProducts = res)
+    this._product.totProducts().subscribe(res => this.totProducts = res);
     this._product.totUsers().subscribe(res => this.totUsers = res)
     this._product.totCategories().subscribe(res => this.totCategories = res)
   }

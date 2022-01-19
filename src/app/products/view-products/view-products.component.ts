@@ -23,34 +23,9 @@ export class ViewProductComponent implements OnInit {
     })
   }
 
-  //Edit task
-  editProduct(index: any) {
-    console.log(index);
-    this._router.navigate(['dashboard/update']);
-  }
 
 
-  //Update record
-  // UpdateTask() {
 
-  //   let formVal = this.userForm.value;
-  //   let obj = {
-
-  //     name: formVal.fname,
-  //     task: formVal.ftask,
-  //     deadline: formVal.fdeadline
-  //   }
-
-  //   this._todoListService.UpdateTodoLit(this._id, obj).subscribe((res) => {
-  //     console.log(res);
-  //   })
-
-  //   if (true) {
-  //     this.saveForm = true
-  //     this.updateForm = false
-  //   }
-
-  // }
 
 
 }

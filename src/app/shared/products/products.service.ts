@@ -18,12 +18,16 @@ export class ProductsService {
     return this.http.get<any>(this.BASE_URL);
   }
 
+  getProductById(productId: any) {
+    return this.http.get(`${this.BASE_URL}/${productId}`);
+  }
+  
   deleteProduct(productId: any) {
     return this.http.delete(`${this.BASE_URL}/${productId}`);
   }
 
   updateProduct(id: any, ObjRef: any) {
-    return this.http.patch(`${this.BASE_URL}/${id}`, ObjRef);
+    return this.http.patch(`${this.BASE_URL}/${id}`, ObjRef)
   }
 
 

@@ -27,9 +27,12 @@
             <td (click)="deleteProduct(product._id)">
                 <i class="fas fa-eraser fa-lg text-danger"></i>
             </td>
-            <td (click)="editProduct(index)">
-                <i class="fas fa-edit fa-lg text-dark"></i>
+            <td>
+                <a class='list-group' routerLink="./{{ product._id }}">
+                    <i class="fas fa-edit fa-lg text-dark"></i>
+                </a>
             </td>
         </tr>
     </tbody>
 </table>
+

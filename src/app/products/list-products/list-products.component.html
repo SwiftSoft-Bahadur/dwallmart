@@ -1,9 +1,9 @@
-<form [formGroup]="productForm" novalidate (ngSubmit)="onSubmit()">
+<form [formGroup]="productForm" novalidate>
     <mat-card class="shipping-card">
         <mat-card-header>
             <mat-card-actions class="mr-2">
                 <mat-card-title>
-                    <a routerLink="../view">Products</a>
+                    <a routerLink="../view">Store Products</a>
                 </mat-card-title>
             </mat-card-actions>
         </mat-card-header>
@@ -136,9 +136,8 @@
 
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit">Save Product </button>
-            <!-- <button mat-raised-button color="primary" type="submit">Edit Product</button> -->
-            <!-- <button mat-raised-button color="primary" type="submit">Delete Product</button> -->
+            <button mat-raised-button color="primary" (click)="onSubmit()">Save Product </button>
+            <button mat-raised-button color="primary" (click)="onUpdate()">Update Product </button>
         </mat-card-actions>
     </mat-card>
 </form>

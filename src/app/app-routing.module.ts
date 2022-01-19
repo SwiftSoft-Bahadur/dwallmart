@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { MainComponent } from './main/main.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
+import { ProductaComponent } from './products/producta/producta.component';
 import { ViewProductComponent } from './products/view-products/view-products.component';
 import { SettingsComponent } from './settings/settings.component';
 import { UsersComponent } from './users/users.component';
@@ -22,7 +23,13 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'users', component: UsersComponent },
       { path: 'products', component: ListProductsComponent },
-      { path: 'view', component: ViewProductComponent },
+      {
+        path: 'product', component: ProductaComponent,
+        children: [
+          { path: '', component: ViewProductComponent },
+          { path: ':id', component: ListProductsComponent },
+        ]
+      },
       { path: 'category', component: StoreCategoryComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'logs', component: ActiveLogComponent },

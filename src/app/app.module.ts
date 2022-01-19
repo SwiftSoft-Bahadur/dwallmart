@@ -31,6 +31,8 @@ import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AddressFormComponent } from './address-form/address-form.component';
+import { UpdateProductsComponent } from './products/update-products/update-products.component';
+import { ProductaComponent } from './products/producta/producta.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { AddressFormComponent } from './address-form/address-form.component';
     SettingsComponent,
     ActiveLogComponent,
     AddressFormComponent,
+    UpdateProductsComponent,
+    ProductaComponent,
   ],
   imports: [
     BrowserModule,
