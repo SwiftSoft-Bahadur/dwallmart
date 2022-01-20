@@ -25,15 +25,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './shared/auth/jwt/jwt.interceptor';
 import { SessionService } from './shared/session/session.service';
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
-import { ListProductsComponent } from './products/list-products/list-products.component';
 import { ViewProductComponent } from './products/view-products/view-products.component';
 import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AddressFormComponent } from './address-form/address-form.component';
-import { UpdateProductsComponent } from './products/update-products/update-products.component';
-import { ProductaComponent } from './products/producta/producta.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MainCategoryComponent } from './categories/main-category/main-category.component';
+import { ViewCategoryComponent } from './categories/view-category/view-category.component';
+import { MainProductComponent } from './products/main-product/main-product.component';
+import { StoreProductComponent } from './products/store-product/store-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,15 +47,16 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SidenavComponent,
     StoreCategoryComponent,
     ListOrdersComponent,
-    ListProductsComponent,
     ViewProductComponent,
     FilterPipe,
     UsersComponent,
     SettingsComponent,
     ActiveLogComponent,
     AddressFormComponent,
-    UpdateProductsComponent,
-    ProductaComponent,
+    MainCategoryComponent,
+    ViewCategoryComponent,
+    MainProductComponent,
+    StoreProductComponent,
   ],
   imports: [
     BrowserModule,

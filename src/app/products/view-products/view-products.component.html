@@ -1,38 +1,56 @@
-<div class="input-group mb-1">
-    <input type="text" id="search" [(ngModel)]="nameSearch" class="form-control border-2 small"
-        placeholder="Search Here..." aria-label="Search" aria-describedby="basic-addon2">
+<div class="row">
+    <div class="col">
+        <div class="container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="btn btn-success" routerLink="store">New</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+
+        <!--  -->
+        <div class="input-group mb-1">
+            <input type="text" id="search" [(ngModel)]="nameSearch" class="form-control border-2 small"
+                placeholder="Search Here..." aria-label="Search" aria-describedby="basic-addon2">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Srn.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">CountInStock</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products | filter:nameSearch;let index as index;  let i = index">
+                        <td>{{1+i}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.brand}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.countInStock}}</td>
+                        <td>{{product.category.name}}</td>
+                        <td (click)="deleteProduct(product._id)">
+                            <i class="fas fa-eraser fa-lg text-danger"></i>
+                        </td>
+                        <td>
+                            <a class='list-group' routerLink="./{{ product._id }}">
+                                <i class="fas fa-edit fa-lg text-dark"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!--  -->
+
+    </div>
 </div>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Srn.</th>
-            <th scope="col">Name</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Price</th>
-            <th scope="col">CountInStock</th>
-            <th scope="col">Category</th>
-            <th scope="col">Delete</th>
-            <th scope="col">Edit</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products | filter:nameSearch;let index as index;  let i = index">
-            <td>{{1+i}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.brand}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.countInStock}}</td>
-            <td>{{product.category.name}}</td>
-            <td (click)="deleteProduct(product._id)">
-                <i class="fas fa-eraser fa-lg text-danger"></i>
-            </td>
-            <td>
-                <a class='list-group' routerLink="./{{ product._id }}">
-                    <i class="fas fa-edit fa-lg text-dark"></i>
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-

@@ -5,11 +5,11 @@ import { CategoryService } from 'src/app/shared/category/category.service';
 import { ProductsService } from 'src/app/shared/products/products.service';
 
 @Component({
-  selector: 'app-list-products',
-  templateUrl: './list-products.component.html',
-  styleUrls: ['./list-products.component.css']
+  selector: 'app-store-product',
+  templateUrl: './store-product.component.html',
+  styleUrls: ['./store-product.component.css']
 })
-export class ListProductsComponent implements OnInit {
+export class StoreProductComponent implements OnInit {
   productForm = this.fb.group({
     name: [null, Validators.required],
     description: [null, Validators.required],
@@ -118,6 +118,4 @@ export class ListProductsComponent implements OnInit {
       this.productForm.reset();
     }
 }
-
-
 
