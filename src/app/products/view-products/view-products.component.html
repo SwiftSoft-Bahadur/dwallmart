@@ -16,20 +16,20 @@
         </div>
         <div class="table-responsive">
             <table class="table table-sm">
-                <thead>
+                <thead class="text-dark">
                     <tr>
                         <th scope="col">Srn.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Brand</th>
                         <th scope="col">Price</th>
-                        <th scope="col">CountInStock</th>
+                        <th scope="col">Stock</th>
                         <th scope="col">Category</th>
                         <th scope="col">Delete</th>
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products | filter:nameSearch;let index as index;  let i = index">
+                    <tr class="text-dark" *ngFor="let product of products | filter:nameSearch;let index as index;  let i = index">
                         <td>{{1+i}}</td>
                         <td>{{product.name}}</td>
                         <td>{{product.brand}}</td>
