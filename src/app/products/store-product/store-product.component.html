@@ -84,8 +84,6 @@
 
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="col">
                     <mat-checkbox required [checked]="false" formControlName="isFeatured" name="first-name" value="true"
@@ -93,18 +91,24 @@
                         isFeatured
                     </mat-checkbox>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <mat-checkbox required [checked]="false" formControlName="isNewarrival" name="first-name"
                         value="true" aria-label="First checkbox">
                         isNewarrival
                     </mat-checkbox>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <mat-checkbox required [checked]="false" formControlName="isBestseller" name="first-name"
                         value="true" aria-label="First checkbox">
                         isBestseller
                     </mat-checkbox>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <mat-checkbox required [checked]="false" formControlName="isMostpopular" name="first-name"
                         value="true" aria-label="First checkbox">
@@ -115,14 +119,16 @@
 
 
         </mat-card-content>
-       
+
         <mat-card-actions>
             <div class="row">
                 <div class="col">
-                    <button mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product </button>
+                    <button mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product
+                    </button>
                 </div>
                 <div class="col">
-                    <button mat-raised-button color="primary" (click)="onUpdate()"  class="form-control">Update Product </button>
+                    <button mat-raised-button color="primary" (click)="onUpdate()" class="form-control">Update Product
+                    </button>
                 </div>
             </div>
         </mat-card-actions>
