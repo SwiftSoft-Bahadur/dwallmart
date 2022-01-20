@@ -59,12 +59,10 @@ export class StoreProductComponent implements OnInit {
       isBestseller: Ref.isBestseller,
       isMostpopular: Ref.isMostpopular,
     }
-
-    console.log(ObjRef);
     
-    // this._product.storeProduct(ObjRef).subscribe(res => {
-    //   alert("Product stored")
-    // });
+    this._product.storeProduct(ObjRef).subscribe(res => {
+      alert("Product stored")
+    });
     this.productForm.reset();
   }
 

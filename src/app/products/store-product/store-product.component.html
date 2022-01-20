@@ -115,9 +115,16 @@
 
 
         </mat-card-content>
+       
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="onSubmit()">Save Product </button>
-            <button mat-raised-button color="primary" (click)="onUpdate()">Update Product </button>
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product </button>
+                </div>
+                <div class="col">
+                    <button mat-raised-button color="primary" (click)="onUpdate()"  class="form-control">Update Product </button>
+                </div>
+            </div>
         </mat-card-actions>
     </mat-card>
 </form>
