@@ -3,7 +3,9 @@
         <div class="container">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="btn btn-success" routerLink="store">New</a>
+                    <a class="btn btn-sm btn-primary" routerLink="store">
+                        New Catagory
+                    </a>
                 </li>
             </ul>
         </div>
@@ -29,7 +31,7 @@
                         <td>{{category.icon}}</td>
                         <td>
                             <a class='list-group' routerLink="./{{ category._id }}">
-                                <i class="fas fa-edit fa-lg text-dark"></i>
+                                <i class="fas fa-edit fa-lg text-primary"></i>
                             </a>
                         </td>
                     </tr>
