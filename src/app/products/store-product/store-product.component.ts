@@ -60,9 +60,11 @@ export class StoreProductComponent implements OnInit {
       isMostpopular: Ref.isMostpopular,
     }
 
-    this._product.storeProduct(ObjRef).subscribe(res => {
-      alert("Product stored")
-    });
+    console.log(ObjRef);
+    
+    // this._product.storeProduct(ObjRef).subscribe(res => {
+    //   alert("Product stored")
+    // });
     this.productForm.reset();
   }
 

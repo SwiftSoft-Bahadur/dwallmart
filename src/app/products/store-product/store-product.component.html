@@ -84,44 +84,32 @@
 
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Featured" formControlName="isFeatured" />
-                        <mat-error *ngIf="productForm.controls['isFeatured'].hasError('required')">
-                            Featured is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-checkbox required [checked]="false" formControlName="isFeatured" name="first-name" value="true"
+                        aria-label="First checkbox">
+                        isFeatured
+                    </mat-checkbox>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Newarrival" formControlName="isNewarrival" />
-                        <mat-error *ngIf="productForm.controls['isNewarrival'].hasError('required')">
-                            Newarrival is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-checkbox required [checked]="false" formControlName="isNewarrival" name="first-name"
+                        value="true" aria-label="First checkbox">
+                        isNewarrival
+                    </mat-checkbox>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Bestseller" formControlName="isBestseller" />
-                        <mat-error *ngIf="productForm.controls['isBestseller'].hasError('required')">
-                            Bestseller is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-checkbox required [checked]="false" formControlName="isBestseller" name="first-name"
+                        value="true" aria-label="First checkbox">
+                        isBestseller
+                    </mat-checkbox>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col">
-                    <mat-form-field class="full-width">
-                        <input matInput placeholder="Mostpopular" formControlName="isMostpopular" />
-                        <mat-error *ngIf="productForm.controls['isMostpopular'].hasError('required')">
-                            Mostpopular is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
+                    <mat-checkbox required [checked]="false" formControlName="isMostpopular" name="first-name"
+                        value="true" aria-label="First checkbox">
+                        isMostpopular
+                    </mat-checkbox>
                 </div>
             </div>
 
