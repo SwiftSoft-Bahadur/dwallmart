@@ -10,11 +10,8 @@ import { CategoryService } from './shared/category/category.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './common/footer/footer.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-import { HeaderComponent } from './common/header/header.component';
-import { SidenavComponent } from './common/sidenav/sidenav.component';
 import { StoreCategoryComponent } from './categories/store-category/store-category.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,14 +26,12 @@ import { ViewProductComponent } from './products/view-products/view-products.com
 import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { SettingsComponent } from './settings/settings.component';
-import { AddressFormComponent } from './address-form/address-form.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MainCategoryComponent } from './categories/main-category/main-category.component';
 import { ViewCategoryComponent } from './categories/view-category/view-category.component';
 import { MainProductComponent } from './products/main-product/main-product.component';
 import { StoreProductComponent } from './products/store-product/store-product.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { ChartsComponent } from './charts/charts.component';
 
 
 
@@ -47,9 +42,6 @@ import { ChartsComponent } from './charts/charts.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
     StoreCategoryComponent,
     ListOrdersComponent,
     ViewProductComponent,
@@ -57,12 +49,10 @@ import { ChartsComponent } from './charts/charts.component';
     UsersComponent,
     SettingsComponent,
     ActiveLogComponent,
-    AddressFormComponent,
     MainCategoryComponent,
     ViewCategoryComponent,
     MainProductComponent,
     StoreProductComponent,
-    ChartsComponent,
   ],
   imports: [
     BrowserModule,

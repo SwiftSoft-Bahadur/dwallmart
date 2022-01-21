@@ -15,6 +15,15 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
+
+                                        <div *ngIf="alertDanger?true:false"
+                                            class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Wrong Credentials!</strong>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <form [formGroup]="userForm" (ngSubmit)="submint()">

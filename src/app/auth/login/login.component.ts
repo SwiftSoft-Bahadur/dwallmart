@@ -11,6 +11,8 @@ import { SessionService } from 'src/app/shared/session/session.service';
 })
 export class LoginComponent implements OnInit {
 
+  alertDanger:boolean = false;
+  
   constructor(
     private fb: FormBuilder,
     private _sessionService: SessionService,
@@ -30,30 +32,31 @@ export class LoginComponent implements OnInit {
       this._router.navigate(['dashboard']);
     }
   }
-
+  
   submint() {
     let Ref = this.userForm.value;
     let ObjRef = {
       email: Ref.email,
       password: Ref.password,
     }
-
+    
     this._authService.login(ObjRef).subscribe(
       res => {
         if (res.user.role === 'admin') {
           this._sessionService.setToken(res.token);
           this._sessionService.setAdmin(res.user.name);
-          window.location.href = "dashboard";
+          this._router.navigate(['dashboard']);
         } else {
-          alert("Wrong Credentials");
+          this.alertDanger = true;
         }
 
       },
       err => {
         if (err.status == 401) {
-          alert("You are not admin 😞");
+         this.alertDanger = true;
         }
       })
   }
+
 
 }
