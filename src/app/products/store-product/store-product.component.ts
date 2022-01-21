@@ -108,11 +108,7 @@ export class StoreProductComponent implements OnInit {
         isMostpopular: Ref.isMostpopular,
       }
 
-      console.log(ObjRef);
-
       this._product.updateProduct(this.id, ObjRef).subscribe(res => {
-        console.log(this.id);
-
         alert("Product updated")
       });
       this.productForm.reset();
