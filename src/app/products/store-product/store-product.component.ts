@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/shared/category/category.service';
 import { ProductsService } from 'src/app/shared/products/products.service';
 
@@ -32,7 +32,8 @@ export class StoreProductComponent implements OnInit {
     private fb: FormBuilder,
     private _category: CategoryService,
     private _product: ProductsService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
 
   ) { }
   ngOnInit(): void {
@@ -59,7 +60,7 @@ export class StoreProductComponent implements OnInit {
       isBestseller: Ref.isBestseller,
       isMostpopular: Ref.isMostpopular,
     }
-    
+
     this._product.storeProduct(ObjRef).subscribe(res => {
       alert("Product stored")
     });
@@ -93,25 +94,25 @@ export class StoreProductComponent implements OnInit {
   onUpdate(): void {
 
     let Ref = this.productForm.value;
-      let ObjRef = {
-        name: Ref.name,
-        description: Ref.description,
-        richDescription: Ref.richDescription,
-        image: Ref.image,
-        brand: Ref.brand,
-        price: Ref.price,
-        category: Ref.category,
-        countInStock: Ref.countInStock,
-        isFeatured: Ref.isFeatured,
-        isNewarrival: Ref.isNewarrival,
-        isBestseller: Ref.isBestseller,
-        isMostpopular: Ref.isMostpopular,
-      }
-
-      this._product.updateProduct(this.id, ObjRef).subscribe(res => {
-        alert("Product updated")
-      });
-      this.productForm.reset();
+    let ObjRef = {
+      name: Ref.name,
+      description: Ref.description,
+      richDescription: Ref.richDescription,
+      image: Ref.image,
+      brand: Ref.brand,
+      price: Ref.price,
+      category: Ref.category,
+      countInStock: Ref.countInStock,
+      isFeatured: Ref.isFeatured,
+      isNewarrival: Ref.isNewarrival,
+      isBestseller: Ref.isBestseller,
+      isMostpopular: Ref.isMostpopular,
     }
+
+    this._product.updateProduct(this.id, ObjRef).subscribe(res => {
+      if (res) { this._router.navigate(['dashboard/product']) }
+    });
+    this.productForm.reset();
+  }
 }
 

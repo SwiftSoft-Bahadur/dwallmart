@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/shared/category/category.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class StoreCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _category: CategoryService,
-    private _activatedRoute: ActivatedRoute) { }
+    private _activatedRoute: ActivatedRoute,
+    private _router:Router) { }
 
 
   ngOnInit() {
@@ -67,7 +68,9 @@ export class StoreCategoryComponent implements OnInit {
       image: Ref.image,
     }
 
-    this._category.updateCategory(this.id, ObjRef).subscribe((res: any) => alert("Category Updated"));
+    this._category.updateCategory(this.id, ObjRef).subscribe((res: any) => {
+      if (res) { this._router.navigate(['dashboard/category']) }
+    });
     this.categoryForm.reset();
   }
 
