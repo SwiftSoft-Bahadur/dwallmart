@@ -8,26 +8,26 @@ export class SessionService {
   constructor() { }
 
   getToken() {
-    let user = localStorage.getItem('token');
+    let user = sessionStorage.getItem('token');
     if (user) {
       return JSON.parse(user);
     }
   }
 
   setToken(user: any) {
-    localStorage.setItem('token', JSON.stringify(user));
+    sessionStorage.setItem('token', JSON.stringify(user));
   }
 
   deleteUser() {
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
   }
   
   setAdmin(user: any) {
-    localStorage.setItem('user', JSON.stringify(user));
+    sessionStorage.setItem('user', JSON.stringify(user));
   }
 
   getAdmin() {
-    let user = localStorage.getItem('user');
+    let user = sessionStorage.getItem('user');
     if (user) {
       return JSON.parse(user);
     }

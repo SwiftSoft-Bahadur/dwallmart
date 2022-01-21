@@ -36,6 +36,10 @@ import { ViewCategoryComponent } from './categories/view-category/view-category.
 import { MainProductComponent } from './products/main-product/main-product.component';
 import { StoreProductComponent } from './products/store-product/store-product.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ChartsComponent } from './charts/charts.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +62,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ViewCategoryComponent,
     MainProductComponent,
     StoreProductComponent,
+    ChartsComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   providers: [
     AuthService,
