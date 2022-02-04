@@ -1,0 +1,8 @@
+<div class="container">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a *ngIf="id?true:false" (click)="onUpdate()" class="btn btn-sm btn-primary" routerLink="/dashboard/users">Update User</a>
+            <a *ngIf="id?false:true" class="btn btn-sm btn-primary" routerLink="/dashboard/users">Back</a>
+        </li>
+    </ul>
+</div>

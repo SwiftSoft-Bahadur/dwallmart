@@ -1,3 +1,15 @@
+<!-- Back button  -->
+<div class="container">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <button *ngIf="id?true:false" (click)="onUpdate()" class="btn btn-sm btn-primary">Update Product
+            </button>&nbsp;
+            <a *ngIf="id?false:true" class="btn btn-sm btn-primary" routerLink="/dashboard/product">Back</a>
+        </li>
+    </ul>
+</div>
+<!--  Back button -->
+
 <form [formGroup]="productForm" novalidate>
     <mat-card class="shipping-card">
         <mat-card-content>
@@ -124,10 +136,6 @@
             <div class="row">
                 <div class="col">
                     <button mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product
-                    </button>
-                </div>
-                <div class="col">
-                    <button mat-raised-button color="primary" (click)="onUpdate()" class="form-control">Update Product
                     </button>
                 </div>
             </div>

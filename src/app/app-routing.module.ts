@@ -13,7 +13,9 @@ import { MainProductComponent } from './products/main-product/main-product.compo
 import { StoreProductComponent } from './products/store-product/store-product.component';
 import { ViewProductComponent } from './products/view-products/view-products.component';
 import { SettingsComponent } from './settings/settings.component';
-import { UsersComponent } from './users/users.component';
+import { MainUserComponent } from './users/main-user/main-user.component';
+import { StoreUserComponent } from './users/store-user/store-user.component';
+import { ViewUserComponent } from './users/view-user/view-user.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,7 +25,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent },
-      { path: 'users', component: UsersComponent },
+      {
+        path: 'users', component: MainUserComponent,
+        children: [
+          { path: '', component: ViewUserComponent },
+          { path: 'store', component: StoreUserComponent },
+          { path: ':id', component: StoreUserComponent },
+        ]
+      },
       {
         path: 'product', component: MainProductComponent,
         children: [

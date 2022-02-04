@@ -24,14 +24,17 @@ import { SessionService } from './shared/session/session.service';
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
 import { ViewProductComponent } from './products/view-products/view-products.component';
 import { MainComponent } from './main/main.component';
-import { UsersComponent } from './users/users.component';
 import { SettingsComponent } from './settings/settings.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MainCategoryComponent } from './categories/main-category/main-category.component';
 import { ViewCategoryComponent } from './categories/view-category/view-category.component';
 import { MainProductComponent } from './products/main-product/main-product.component';
 import { StoreProductComponent } from './products/store-product/store-product.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SortPipe } from './pipes/sort/sort.pipe';
+import { MainUserComponent } from './users/main-user/main-user.component';
+import { StoreUserComponent } from './users/store-user/store-user.component';
+import { ViewUserComponent } from './users/view-user/view-user.component';
 
 
 
@@ -46,13 +49,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ListOrdersComponent,
     ViewProductComponent,
     FilterPipe,
-    UsersComponent,
     SettingsComponent,
     ActiveLogComponent,
     MainCategoryComponent,
     ViewCategoryComponent,
     MainProductComponent,
     StoreProductComponent,
+    SortPipe,
+    MainUserComponent,
+    StoreUserComponent,
+    ViewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +84,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     },
     SessionService,
     CategoryService,
-  
+
   ],
   bootstrap: [AppComponent]
 })
