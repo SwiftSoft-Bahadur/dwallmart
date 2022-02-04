@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
     { name: 'Users', link: 'users', icon: 'fas fa-user fa-sm fa-fw mr-2 text-gray-400' },
     { name: 'Products', link: 'product', icon: 'fa-search mr-2 text-gray-400' },
     { name: 'Category', link: 'category', icon: 'fa-bars mr-2 text-gray-400' },
+    { name: 'Profile', link: 'profile', icon: 'fas fa-user fa-sm fa-fw mr-2 text-gray-400' },
     { name: 'Settings', link: 'settings', icon: 'fas fa-cogs fa-sm fa-fw mr-2 text-gray-400' },
   ]
   userName:any;

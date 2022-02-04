@@ -35,6 +35,8 @@ import { SortPipe } from './pipes/sort/sort.pipe';
 import { MainUserComponent } from './users/main-user/main-user.component';
 import { StoreUserComponent } from './users/store-user/store-user.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
+import { MainProfileComponent } from './profile/main-profile/main-profile.component';
+import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
 
 
 
@@ -58,7 +60,9 @@ import { ViewUserComponent } from './users/view-user/view-user.component';
     SortPipe,
     MainUserComponent,
     StoreUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    MainProfileComponent,
+    ViewProfileComponent
   ],
   imports: [
     BrowserModule,

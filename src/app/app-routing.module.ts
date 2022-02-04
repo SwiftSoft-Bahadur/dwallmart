@@ -12,6 +12,8 @@ import { MainComponent } from './main/main.component';
 import { MainProductComponent } from './products/main-product/main-product.component';
 import { StoreProductComponent } from './products/store-product/store-product.component';
 import { ViewProductComponent } from './products/view-products/view-products.component';
+import { MainProfileComponent } from './profile/main-profile/main-profile.component';
+import { ViewProfileComponent } from './profile/view-profile/view-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MainUserComponent } from './users/main-user/main-user.component';
 import { StoreUserComponent } from './users/store-user/store-user.component';
@@ -32,6 +34,15 @@ const routes: Routes = [
           { path: 'store', component: StoreUserComponent },
           { path: ':id', component: StoreUserComponent },
         ]
+      },
+      {
+        path: 'profile', component: MainProfileComponent,
+        children: [
+          { path: '', component: ViewProfileComponent },
+          // { path: 'store', component: StoreUserComponent },
+          // { path: ':id', component: StoreUserComponent },
+        ]
+
       },
       {
         path: 'product', component: MainProductComponent,

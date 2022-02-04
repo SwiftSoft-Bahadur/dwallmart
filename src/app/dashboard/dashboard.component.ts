@@ -8,12 +8,14 @@ import { ProductsService } from '../shared/products/products.service';
 })
 export class DashboardComponent implements OnInit {
 
-  totProducts:any
+  totProducts: any
   totOrders: any
   totUsers: any
   totCategories: any
 
-  constructor(private _product: ProductsService) { }
+  constructor(
+    private _product: ProductsService,
+  ) { }
 
   ngOnInit(): void {
     this._product.totOrders().subscribe(res => this.totOrders = res);
