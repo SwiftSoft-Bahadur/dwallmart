@@ -4,7 +4,7 @@
         <li class="nav-item">
             <button *ngIf="id?true:false" (click)="onUpdate()" class="btn btn-sm btn-primary">Update Product
             </button>&nbsp;
-            <a *ngIf="id?false:true" class="btn btn-sm btn-primary" routerLink="/dashboard/product">Back</a>
+            <a *ngIf="id?false:true" class="btn btn-primary" routerLink="/dashboard/product">Back</a>
         </li>
     </ul>
 </div>
@@ -132,10 +132,10 @@
 
         </mat-card-content>
 
-        <mat-card-actions>
+        <mat-card-actions >
             <div class="row">
                 <div class="col">
-                    <button mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product
+                    <button *ngIf="id?false:true" mat-raised-button color="primary" (click)="onSubmit()" class="form-control">Save Product
                     </button>
                 </div>
             </div>
