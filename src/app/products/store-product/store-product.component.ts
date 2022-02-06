@@ -62,7 +62,7 @@ export class StoreProductComponent implements OnInit {
     }
 
     this._product.storeProduct(ObjRef).subscribe(res => {
-      alert("Product stored")
+      this._router.navigate(['dashboard/product']);
     });
     this.productForm.reset();
   }

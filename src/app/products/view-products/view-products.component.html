@@ -29,9 +29,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-dark" *ngFor="let product of products | filter:nameSearch;let index as index;  let i = index">
+                    <tr class="text-dark" *ngFor="let product of products | filter:nameSearch; let index as index;  let i = index">
                         <td>{{1+i}}</td>
-                        <td>{{product.name}}</td>
+                        <td>{{product.name }}</td>
                         <td>{{product.brand}}</td>
                         <td>{{product.price}}</td>
                         <td>{{product.countInStock}}</td>
