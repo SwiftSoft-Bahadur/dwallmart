@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from GitHub
-                git 'https://github.com/your-username/your-angular-project.git'
+                git 'https://github.com/SwiftSoft-Bahadur/dwallmart.git'
             }
         }
         
