@@ -1,45 +1,54 @@
 pipeline {
-    agent any // This specifies that the pipeline can run on any available agent
-options {
-  buildDiscarder logRotator(daysToKeepStr: '1', numToKeepStr: '1')
-}
+    agent any
 
     stages {
-        stage('Checkout') {
+        stage('Clone and Prepare') {
             steps {
+                // Clean workspace before cloning
                 deleteDir()
-                // Checkout the source code from GitHub
+
+                // Clone the repository from GitHub
                 git 'https://github.com/SwiftSoft-Bahadur/dwallmart.git'
+
+                // Install Node.js and npm
+                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'apt-get install -y nodejs'
+
+                // Install Angular CLI
+                sh 'npm install -g @angular/cli'
+
+                // Install project dependencies
+                sh 'npm install'
             }
         }
-        
-        stage('Install Dependencies') {
+
+        stage('Test') {
             steps {
-                echo 'Installing project dependencies...'
-                // sh 'npm install' // Use npm to install Angular project dependencies
+                // Run tests for the Angular application
+                sh 'npm run test'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building the project...'
-               // sh 'ng build' // Use npm to build the Angular project
+                // Build the Angular application
+                sh 'npm run build --prod'
             }
         }
-        
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                //sh 'ng test' // Use npm to run tests for the Angular project
-            }
-        }
-        
+
         stage('Deploy') {
             steps {
-                echo 'Deploying the project...'
-                // Add your deployment commands here
-                // For example, you can deploy the built files to a web server or a cloud platform
+                // Deploy the built application to a web server
+                // Replace 'your-web-server-path' with the actual path to your web server root directory
+                sh 'cp -r dist/* /var/www/html'
             }
+        }
+    }
+
+    post {
+        always {
+            // Clean up the workspace
+            deleteDir()
         }
     }
 }
