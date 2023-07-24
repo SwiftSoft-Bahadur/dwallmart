@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                deleteDir()
                 // Checkout the source code from GitHub
                 git 'https://github.com/SwiftSoft-Bahadur/dwallmart.git'
             }
