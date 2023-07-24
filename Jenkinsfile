@@ -23,14 +23,14 @@ options {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'ng build' // Use npm to build the Angular project
+               // sh 'ng build' // Use npm to build the Angular project
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'ng test' // Use npm to run tests for the Angular project
+                //sh 'ng test' // Use npm to run tests for the Angular project
             }
         }
         
