@@ -1,7 +1,7 @@
 pipeline {
     agent any // This specifies that the pipeline can run on any available agent
 options {
-  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '1', numToKeepStr: '1')
+  buildDiscarder logRotator(daysToKeepStr: '1', numToKeepStr: '1')
 }
 
     stages {
