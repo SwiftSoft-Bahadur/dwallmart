@@ -16,7 +16,7 @@ options {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing project dependencies...'
-                sh 'npm install' // Use npm to install Angular project dependencies
+                // sh 'npm install' // Use npm to install Angular project dependencies
             }
         }
 
