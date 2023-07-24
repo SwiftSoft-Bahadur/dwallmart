@@ -11,7 +11,7 @@ pipeline {
                 git 'https://github.com/SwiftSoft-Bahadur/dwallmart.git'
 
                 // Install Node.js and npm
-                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'curl -sL https://deb.nodesource.com/setup_20.x | bash -'
                 sh 'apt-get install -y nodejs'
 
                 // Install Angular CLI
