@@ -1,11 +1,3 @@
-def currentDateTime(){
-    return new Date().toString()
-}
-
-def clearWorkspace(){
-    sh "rm -rf *"
-}
-
 pipeline {
     agent any
 
@@ -17,4 +9,12 @@ pipeline {
             }
         }
     }
+}
+
+def currentDateTime(){
+    return new Date().toString()
+}
+
+def clearWorkspace(){
+    sh "rm -rf *"
 }
